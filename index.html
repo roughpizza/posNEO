@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>東進学力POS NEO(非公式ファンサイト)</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#070d0b;--p:#12281f;--p2:#1b3d2f;--bd:#2f7a5a;--tx:#e8f5ee;--mu:#86a395;--g:#22e08f;--g2:#0fa968;--ng:#ff6b7a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(600px 420px at 0 -5%,rgba(57,255,156,.3),transparent 62%),radial-gradient(520px 420px at 100% 15%,rgba(0,229,255,.22),transparent 60%),radial-gradient(560px 460px at 50% 110%,rgba(255,46,200,.22),transparent 62%),linear-gradient(rgba(57,255,156,.06) 1px,transparent 1px) 0 0/36px 36px,linear-gradient(90deg,rgba(57,255,156,.06) 1px,transparent 1px) 0 0/36px 36px,var(--bg);background-attachment:fixed;color:var(--tx);font:14px/1.6 system-ui,-apple-system,"Hiragino Sans","Noto Sans JP",sans-serif;min-height:100vh}
+main{max-width:640px;margin:0 auto;padding:12px 14px calc(84px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}
+.logo{font:800 20px/1 ui-monospace,Menlo,monospace;letter-spacing:.04em}.logo span{color:var(--g)}
+.tag{font-size:10px;color:var(--g);border:1px solid var(--g2);border-radius:99px;padding:3px 8px}
+.card{background:var(--p);border:1px solid rgba(80,220,255,.95);border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 0 5px rgba(80,220,255,.8),0 0 16px rgba(80,220,255,.35),inset 0 0 10px rgba(80,220,255,.12)}
+h2{font:700 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;color:var(--mu);margin:0 0 10px;text-transform:uppercase}
+.big{font:800 44px/1 ui-monospace,Menlo,monospace;color:var(--g);text-shadow:0 0 22px rgba(34,224,143,.4)}
+.mu{color:var(--mu);font-size:12px}.up{color:var(--g)}.dn{color:var(--ng)}
+input,select,textarea{width:100%;background:var(--p2);border:1px solid var(--bd);border-radius:10px;color:var(--tx);padding:10px;font:inherit;margin-bottom:8px}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--g2)}
+button{background:linear-gradient(90deg,var(--g2),var(--g));color:#04140d;border:0;border-radius:10px;padding:11px 16px;font:700 14px inherit;cursor:pointer}
+button:disabled{opacity:.5}button.s{background:var(--p2);color:var(--tx);border:1px solid var(--bd);padding:6px 10px;font-weight:500;font-size:12px}
+label.drop{display:block;border:2px dashed var(--bd);border-radius:12px;padding:20px;text-align:center;color:var(--mu);cursor:pointer;margin-bottom:8px}
+label.drop:hover{border-color:var(--g)}
+.nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:rgba(10,18,15,.94);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);backdrop-filter:blur(10px);z-index:5}
+.nav button{flex:1;background:none;color:var(--mu);border-radius:0;padding:12px 0;font-size:12px}.nav button.on{color:var(--g);box-shadow:inset 0 2px 0 var(--g)}
+.plate{display:inline-flex;align-items:stretch;border-radius:6px;overflow:hidden;color:#fff;font-size:12px;max-width:100%;vertical-align:middle;box-shadow:0 0 0 1px rgba(255,255,255,.08)}
+.plate i{font-style:normal;padding:2px 8px;background:rgba(0,0,0,.28);white-space:nowrap;font-size:11px}.plate b{padding:2px 10px;overflow-wrap:anywhere}
+.gfx{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;cursor:pointer}
+.stage{position:relative;width:96px;height:96px}
+.orb{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--oc) 45%,#0b1d2a 100%);box-shadow:0 0 30px var(--oc);animation:orbshake .18s linear infinite,orbpulse 1s ease-in-out infinite}
+.orb.burst{animation:orbburst .6s ease-out forwards}
+.orb.ssr{background:conic-gradient(#ff3b3b,#ffb02e,#f2ec3a,#2ee86b,#2ec8ff,#8b5cff,#ff4fd8,#ff3b3b)}
+.ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--oc);animation:ring .9s ease-out forwards}
+.flash{position:absolute;inset:0;background:var(--oc);opacity:0;animation:flash .5s ease-out forwards}
+.rt{position:relative;font:800 44px ui-monospace,Menlo,monospace;text-shadow:0 0 18px currentColor;animation:pop .5s ease-out both}
+.pop{animation:pop .45s ease-out both}
+@keyframes orbshake{0%{transform:translateX(-3px) rotate(-3deg)}50%{transform:translateX(3px) rotate(3deg)}100%{transform:translateX(-3px) rotate(-3deg)}}
+@keyframes orbpulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.5)}}
+@keyframes orbburst{0%{transform:scale(1);opacity:1}60%{transform:scale(2.2);opacity:1}100%{transform:scale(3);opacity:0}}
+@keyframes ring{from{transform:scale(1);opacity:.9}to{transform:scale(6);opacity:0}}
+@keyframes flash{0%{opacity:.8}100%{opacity:0}}
+@keyframes pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.orb,.ring,.flash,.rt,.pop{animation:none!important}.flash{display:none}}
+.cfx{position:absolute;inset:0;background:radial-gradient(circle,rgba(251,191,36,.55),transparent 65%);animation:cfblink .25s ease-in-out infinite alternate}
+.cft{position:relative;font:800 34px ui-monospace,Menlo,monospace;color:#fbbf24;letter-spacing:.1em;text-shadow:0 0 16px #fbbf24,0 0 32px #f0abfc;animation:pop .35s ease-out both}
+@keyframes cfblink{from{opacity:.25}to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cfx,.cft{animation:none!important}}
+@keyframes bgmove{from{background-position:0 0}to{background-position:300% 0}}
+.cp{background:var(--p2);color:var(--tx);border:1px solid var(--bd);padding:8px 6px;font-size:12px;text-align:left;font-weight:400;border-radius:8px}.cp:disabled{opacity:.5;cursor:default}
+@keyframes frame{from{background-position:0 0,0 0}to{background-position:0 0,150% 0}}
+@keyframes glw{0%,100%{filter:brightness(1)}50%{filter:brightness(1.3)}}
+@keyframes dna{from{background-position:0 center,0 0}to{background-position:40px center,0 0}}
+@media (prefers-reduced-motion:reduce){.plate{animation:none!important}}
+.plate.gen b{background:#0d0520;color:#fff;text-shadow:none;letter-spacing:0;font-weight:700;border-left:1px solid #b46bff}.plate.gen i{background:rgba(20,5,45,.45)}.plate.gen2 b{background:rgba(20,5,45,.6)}
+.plate.neo i{background:rgba(255,255,255,.4)}
+.plate{font-size:12px;border-radius:6px}.plate i{padding:2px 32px;font-size:11px;text-align:center}.plate b{padding:2px 10px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 0;border-top:1px solid var(--bd)}.row:first-of-type{border-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.chip{border:1px solid var(--bd);border-radius:99px;padding:3px 10px;font-size:12px;color:var(--mu);background:var(--p2);cursor:pointer}.chip.on{color:#04140d;background:var(--g);border-color:var(--g)}
+.star{color:#ffcf4a;letter-spacing:2px}.st{font-size:22px;cursor:pointer;color:#3a4a42}.st.on{color:#ffcf4a}
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tc{border:1px solid var(--bd);border-radius:12px;padding:10px;background:var(--p2)}.tc.lk{opacity:.45;filter:grayscale(1)}
+svg{width:100%;height:auto;display:block}
+#msg{margin-top:8px;font-size:13px}
+</style></head><body><main>
+<div class="top"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-width:0"><div class="logo">POS<span>NEO</span></div><span id="who"></span></div><span class="tag">非公式ファンサイト・東進とは無関係</span></div>
+<div id="app"><p class="mu">読み込み中…</p></div>
+</main><div id="fb" style="position:fixed;left:12px;right:12px;top:calc(12px + env(safe-area-inset-top,0px));z-index:9;background:#3a1219;border:1px solid #ff6b7a;color:#ffd5da;border-radius:10px;padding:10px 12px;font-size:13px" hidden=""></div>
+<div class="nav" id="nav" hidden=""></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+/* この行は、ファイルを開くと出る設定画面が自動で書き換えます。手で編集する必要はありません。 */
+window.POSNEO_CONFIG={"url":"https://mqccdwcfyiwoprhmamok.supabase.co","anonKey":"sb_publishable_UppikpMrafQ8uZCzxJZnQw_zsP6Vt-d"};
+</script>
+<script>
+(function(){
+var SRC0=document.documentElement.outerHTML;
+var $=function(s){return document.querySelector(s)};
+var S={uid:null,users:{},scores:{},rv:[],tab:"home",flt:"全て",q:"",star:5,got:{u:0,s:0,r:0}};
+var db,SB,busy=false;
+var pad=function(n){return String(n).padStart(2,"0")};
+var f2=function(n){return (Math.round(n*100)/100).toFixed(2)};
+function esc(s){var d=document.createElement("div");d.textContent=s==null?"":s;return d.innerHTML}
+function dk(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function kd(k){var p=k.split("-");return new Date(+p[0],+p[1]-1,+p[2],12)}
+function addD(d,n){var x=new Date(d);x.setDate(x.getDate()+n);return x}
+function wst(d){return addD(d,-((d.getDay()+6)%7))}
+var TT=[
+["void","虚無の0.00","得点0.00を登録","background:#3b3f45"],
+["pio","NEOの開拓者","初回スクショ登録","background:#0fa968"],
+["kiz","刻み込む者","同日に2回以上上書き","background:repeating-linear-gradient(45deg,#06b6d4 0 10px,#10d97a 10px 20px)"],
+["mid","深夜の自宅受講勢","23:00〜02:59に更新","background:linear-gradient(90deg,#0b1a4a,#5b2a9a)"],
+["cls","閉館ギリギリの粘り","21:30〜22:15に更新","background:linear-gradient(90deg,#ff5e3a,#ffb15c)"],
+["mor","朝活の覇者","05:00〜08:30に更新","background:linear-gradient(90deg,#ffd36b,#8fd8ff);color:#12202a"],
+["fst","高速マスターの鬼","1日+5.00点以上","background:linear-gradient(90deg,#e11d1d,#ff8a1f)"],
+["trn","受講の暴走機関車","1日+10.00点以上","background:#0a0a0a;box-shadow:inset 0 0 0 2px #d4a017,inset 0 0 0 4px #c4161c"],
+["str","毎日登校の鉄人","7日連続登録","background:linear-gradient(90deg,#9aa4b2,#f2f5f8,#aeb8c6);color:#1b2430"],
+["wkd","週末の狂戦士","土日合計+10.00点以上","background:linear-gradient(90deg,#3b0a5c,#ff2fa0)"],
+["gnt","ジャイアントキリング","ライバルを逆転して週間1位","background:#050505;box-shadow:inset 0 0 0 2px #e8b923"],
+["som","講座ソムリエ","講座レビュー3件以上","background:linear-gradient(90deg,#1f3fbf,#10b981)"]];
+function tt(id){return TT.filter(function(t){return t[0]===id})[0]}
+var BG={bronze:"background:linear-gradient(90deg,#8a5a2b,#d09a5b)",silver:"background:linear-gradient(90deg,#8d97a6,#e3e8f0);color:#1b2430",gold:"background:linear-gradient(90deg,#b8860b,#ffd54a);color:#2a1d00",platinum:"background:linear-gradient(90deg,#9fb6c8,#eef6fc,#9fb6c8);color:#14202b",rainbow:"background:linear-gradient(90deg,#ff3b3b,#ffb02e,#f2ec3a,#2ee86b,#2ec8ff,#8b5cff,#ff4fd8);color:#111;box-shadow:0 0 14px rgba(255,255,255,.5)",day:"background:linear-gradient(90deg,#e11d48,#fb923c)",wk:"background:linear-gradient(90deg,#1d4ed8,#38bdf8)",mo:"background:linear-gradient(90deg,#6d28d9,#10b981)"};
+var RKN={bronze:"ブロンズ",silver:"シルバー",gold:"ゴールド",platinum:"プラチナ",rainbow:"虹色／ダイヤ"};
+var MAIN=[[1,"知識の扉を開きし者","bronze"],[10,"暁の探究者","bronze"],[25,"蒼き魔導の継承者","bronze"],[50,"境界を越える異端者（アウトサイダー）","silver"],[75,"深淵を覗く求道者","silver"],[100,"第壱の封印を解きし者（ブレイクスルー）","gold"],[150,"運命に抗う反逆者（リベリオン）","gold"],[200,"双極の覚醒者（ダブル・アウェイク）","platinum"],[250,"真理へ至る超越者","platinum"],[300,"全知を司る絶対王者（ソブリン）","rainbow"]];
+var DAYT=[[1,"覚醒の兆し"],[3,"紅蓮の集中状態（ゾーン突入）"],[5,"限界突破（リミットブレイク）"],[10,"因果律を狂わせる暴走機関（オーバードライブ）"]];
+var WKT=[[5,"闇夜を駆ける狩人（ハンター）"],[10,"疾風迅雷の挑戦者"],[15,"蒼炎を纏う修羅の歩み"],[25,"光速を超えし次元跳躍者"]];
+var MOT=[[15,"静寂なる知識の収集家"],[30,"無限の書庫を統べる者"],[50,"校舎の頂点に君臨する覇王"],[80,"記録を塗り替える伝説の創世主（ジェネシス）"]];
+var SBT=[["英語","background:linear-gradient(90deg,#ca8a04,#fde047);color:#2b1d00",["言の葉の欠片を拾う者","異界の言語を解読する者","言霊を操る魔術師","バベルの塔を制圧せし言語の支配者"]],["数学","background:linear-gradient(90deg,#1e3a8a,#60a5fa)",["数式の迷宮に踏み込む者","虚数空間の観測者","黄金比と論理の錬金術師","世界の理（ロゴス）を証明する賢者"]],["国語","background:linear-gradient(90deg,#9d174d,#f472b6)",["文字の海に漕ぎ出す者","行間の深淵を視る者","文脈を掌握する精神感応者","森羅万象を読み解く絶対の眼"]],["理科","background:linear-gradient(90deg,#14532d,#22c55e)",["理の火種を灯す者","元素の囁きを聞く者","自然界の法則を操る調律者","宇宙の真理を解き明かす開拓者"]],["地歴公民","background:linear-gradient(90deg,#9a3412,#fb923c)",["時の回廊を歩き出す者","時空を旅する観測者","世界線の記憶を継ぐ者","人類史のすべてを刻む時の支配者"]]];
+TT.forEach(function(t){if(!t[4])t[4]="実績"});
+MAIN.forEach(function(r,i){TT.push(["m"+i,r[1],"累計"+r[0]+"点以上で解放（"+RKN[r[2]]+"）",BG[r[2]],"メインランク"])});
+DAYT.forEach(function(r,i){TT.push(["d"+i,r[1],"1日で"+r[0]+"点以上で解放",BG.day,"1日"])});
+WKT.forEach(function(r,i){TT.push(["w"+i,r[1],"1週間で"+r[0]+"点以上で解放",BG.wk,"週間"])});
+MOT.forEach(function(r,i){TT.push(["o"+i,r[1],"1か月で"+r[0]+"点以上で解放",BG.mo,"月間"])});
+SBT.forEach(function(s,j){[10,25,75,100].forEach(function(p,i){var gc=(s[1].match(/,(#[0-9a-f]{6})\)/)||[])[1]||"#fff",css=s[1];
+ if(i===2)css+=";box-shadow:0 0 8px "+gc;
+ if(i===3){var gp=s[1].slice(11).split(";");css="border:2px solid transparent;background:"+gp[0]+" 0 0/100% 100% padding-box,linear-gradient(120deg,#fff,"+gc+",#fff,"+gc+",#fff) 0 0/300% 100% border-box"+(gp[1]?";"+gp[1]:"")+";box-shadow:0 0 10px "+gc+",0 0 24px "+gc+";animation:frame 3s linear infinite"}
+ TT.push(["s"+j+"_"+i,s[2][i],s[0]+"の累計"+p+"点以上で解放（ランク"+(i+1)+"）",css,"科目別"])})});
+var HX="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="40" height="22" viewBox="0 0 40 22"><path d="M0 11Q10 -7 20 11T40 11" fill="none" stroke="#b46bff" stroke-width="1.6"/><path d="M0 11Q10 29 20 11T40 11" fill="none" stroke="#ff4fd8" stroke-width="1.6"/><path d="M5 4.6V17.4M10 2V20M15 4.6V17.4M25 4.6V17.4M30 2V20M35 4.6V17.4" stroke="#e9d5ff" stroke-width="1" opacity=".8"/></svg>');
+TT.push(["gen","THE GENESIS","すべての始まりであり、この世界（システム）を生み出した唯一の始祖。","background:url("+HX+") 0 center/40px 22px repeat-x,linear-gradient(90deg,#1a0538,#3b0f7a,#1a0538);color:#fff;font-weight:800;letter-spacing:.18em;text-shadow:0 1px 3px #000,0 0 8px rgba(190,100,255,.95);box-shadow:0 0 12px #b46bff,0 0 28px rgba(160,60,255,.7);animation:dna 3s linear infinite","DEVELOPER"]);
+function stats(uid,o){var D=days(uid,o),t=0,b=0,w={},m={};Object.keys(D).forEach(function(k){var p=D[k].pts;t+=p;if(p>b)b=p;var a=dk(wst(kd(k))),c=k.slice(0,7);w[a]=(w[a]||0)+p;m[c]=(m[c]||0)+p});
+ var mx=function(x){var r=0;Object.keys(x).forEach(function(k){if(x[k]>r)r=x[k]});return r};return{tot:t,day:b,wk:mx(w),mo:mx(m)}}
+function derived(uid,o){var s=stats(uid,o),d={};
+ MAIN.forEach(function(r,i){if(s.tot>=r[0])d["m"+i]=1});DAYT.forEach(function(r,i){if(s.day>=r[0])d["d"+i]=1});
+ WKT.forEach(function(r,i){if(s.wk>=r[0])d["w"+i]=1});MOT.forEach(function(r,i){if(s.mo>=r[0])d["o"+i]=1});var uu=S.users[uid]||{},gg=uu.g||{};if(gg.st)[7,30,100,365].forEach(function(n){if(gg.st.m>=n)d["k"+n]=1});if(gg.fo&&gg.fo.indexOf("shop")>=0)d.fshop=1;return d}
+function allUnlocked(){var u=Object.assign({},(me()&&me().unlocked)||{}),d=derived(S.uid);Object.keys(d).forEach(function(k){u[k]=1});if(S.admin)u.gen=1;return u}
+function plateT(n,id){var t=tt(id);return'<span class="plate" style="'+t[3]+'"><i>'+(id==="gen"?esc(t[1]):"【"+esc(t[1])+"】")+'</i><b>'+esc(n)+'</b></span>'}
+function rankV(){var st=stats(S.uid),cur=-1,nx=null;MAIN.forEach(function(r,i){if(st.tot>=r[0])cur=i;else if(!nx)nx=r});
+ var prev=cur>=0?MAIN[cur][0]:0;
+ return'<div class="card"><h2>MAIN RANK</h2>'+(cur>=0?plateT(me().name,"m"+cur)+' <span class="mu">'+RKN[MAIN[cur][2]]+'</span>':'<span class="mu">向上得点を記録すると、累計に応じたランクが解放されます</span>')+
+ '<div class="mu" style="margin-top:8px">累計 <b style="color:var(--tx)">'+f2(st.tot)+'点</b>'+(nx?' ・ 次のランクまであと <b style="color:var(--tx)">'+f2(nx[0]-st.tot)+'点</b>':' ・ 最高ランクに到達しました')+'</div>'+
+ (nx?'<div style="height:6px;border-radius:3px;background:var(--p2);margin-top:6px"><div style="height:6px;border-radius:3px;background:var(--g);width:'+Math.max(0,Math.min(100,(st.tot-prev)/(nx[0]-prev)*100))+'%"></div></div>':'')+'</div>'}
+function titleV2(){var m=me(),u=allUnlocked(),G={};TT.forEach(function(t){if(t[0]==="gen"&&!S.admin)return;(G[t[4]]=G[t[4]]||[]).push(t)});
+ var h='<div class="card"><h2>FAVORITE お気に入り称号</h2>'+plate(S.uid)+'<p class="mu">獲得した称号から1つを選んで飾れます。装備するとネームプレートの背景が変わります。</p></div>';
+ ["メインランク","1日","週間","月間","科目別","実績","ログイン","ショップ","DEVELOPER"].forEach(function(g){if(!G[g])return;
+  h+='<div class="card"><h2>'+g+'</h2>'+(g==="科目別"?'<p class="mu">科目別の向上得点は、いまのスクショ登録では取得できないため、現在は解放されません。</p>':'')+'<div class="tl">'+G[g].map(function(t){var o=u[t[0]],gn=t[0]==="gen";
+   return'<div class="tc'+(o?"":" lk")+'"><span class="plate'+(gn?" gen2":"")+'" style="'+t[3]+'"><i>'+(o?"解放":"未解放")+'</i><b>'+(o?esc(t[1]):"？？？")+'</b></span><div class="mu" style="margin:6px 0">'+esc(t[2])+'</div>'+(o?(m.title===t[0]?'<button class="s" data-a="eq" data-v="">外す</button>':'<button class="s" data-a="eq" data-v="'+t[0]+'">装備する</button>'):'')+'</div>'}).join("")+'</div></div>'});
+ return h}
+function plate(uid){var u=S.users[uid];if(!u)return'<span class="plate"><b>退会済み</b></span>';var t=u.title&&tt(u.title);if(u.title==="custom"&&u.g&&u.g.eq)return cplate(u);
+ return'<span class="plate'+(t?(t[0]==="gen"?" gen":""):" neo")+'" style="'+(t?t[3]:"background:#34e0a1;color:#04140d")+'"><i>'+(t?(t[0]==="gen"?esc(t[1]):"【"+esc(t[1])+"】"):"NEO生")+'</i><b>'+esc(u.name)+'</b></span>'}
+function me(){return S.users[S.uid]}
+function hs(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}return h>>>0}
+var GC={k:null,v:null};
+function G(){var w=wst(new Date());w.setHours(0,0,0,0);var wk=dk(w),wt0=w.getTime(),key=wk+"|"+S.ver;if(GC.k===key)return GC.v;var by={},out={};
+ Object.keys(S.users).forEach(function(i){var u=S.users[i];if(u.gr&&u.jt)(by[u.gr]=by[u.gr]||[]).push(i)});
+ Object.keys(by).forEach(function(g){var L=by[g],base=L.filter(function(i){return S.users[i].jt<wt0}).sort(function(a,b){return hs(wk+a)-hs(wk+b)||(a<b?-1:1)}),late=L.filter(function(i){return S.users[i].jt>=wt0}).sort(function(a,b){return S.users[a].jt-S.users[b].jt||(a<b?-1:1)}),k=Math.ceil(base.length/20),gs=[];
+  for(var x=0;x<k;x++)gs.push([]);base.forEach(function(i,n){gs[n%k].push(i)});
+  late.forEach(function(i){var best=null;gs.forEach(function(a){if(a.length<20&&(!best||a.length<best.length))best=a});if(!best){best=[];gs.push(best)}best.push(i)});
+  gs.forEach(function(a,n){a.forEach(function(i){out[i]={n:n+1,ids:a}})})});
+ GC={k:key,v:out};return out}
+function mem(){var g=G()[S.uid];return g?g.ids:[]}
+function days(uid,o){var d=(o||S.scores)[uid];return d&&d.days||{}}
+function wtot(uid,ws,o){var s=0,D=days(uid,o);for(var i=0;i<7;i++){var k=dk(addD(ws,i));if(D[k])s+=D[k].pts}return s}
+function leader(ws,o){var b=null,v=0,n=0;mem().forEach(function(i){var t=wtot(i,ws,o);if(Object.keys(days(i,o)).length)n++;if(t>v){v=t;b=i}});return n>=2?b:null}
+function warn(t){var b=$("#fb");b.textContent=t;b.hidden=false;clearTimeout(warn.t);warn.t=setTimeout(function(){b.hidden=true},9000)}
+function toast(t){S.hm=t;var m=$("#msg");if(m)m.innerHTML=t}
+
+/* ---------- views ---------- */
+function loginV(){var m=me()||{};return'<div class="card"><h2>LOGIN</h2><p class="mu">本名は使わず、ニックネームだけで参加します。同じ学年の利用者から、ランダムに最大20人のグループに分けられ、毎週月曜にシャッフルされます。</p><input id="nick" maxlength="12" placeholder="ニックネーム(本名NG)" value="'+esc(m.name||"")+'"><select id="gr">'+["中学生","高1","高2","高3","既卒"].map(function(g){return'<option'+(m.gr===g?" selected":"")+'>'+g+'</option>'}).join("")+'</select><button data-a="login">はじめる</button><p class="mu" style="margin-top:8px">※学年を変えると、新しい学年のグループにランダムで入り直します。</p></div>'}
+function rivalTableV(){var ids=mem(),ws=wst(new Date()),tk=dk(new Date());if(ids.length<2)return'';var tot=wtot(S.uid,ws);
+ var rows=ids.map(function(i){var x=days(i)[tk];return{i:i,td:x?x.pts:null,wk:wtot(i,ws),pr:x&&x.img?1:0}}).sort(function(a,b){return b.wk-a.wk});
+ return'<div class="card"><h2>RIVAL 向上得点</h2><div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:13px"><tr class="mu" style="text-align:right"><th style="text-align:left;font-weight:500">ライバル</th><th style="font-weight:500;padding:4px 8px">今日</th><th style="font-weight:500;padding:4px 8px">今週</th><th style="font-weight:500">自分との差</th></tr>'+
+ rows.map(function(r){var me2=r.i===S.uid,df=tot-r.wk;return'<tr style="border-top:1px solid var(--bd);text-align:right;
